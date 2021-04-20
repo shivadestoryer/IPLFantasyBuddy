@@ -13,8 +13,15 @@ public class IPLSchedule {
 	@GeneratedValue
 	private int mid;
 	private  String venue;
-	private String teams;
+	private String team1;
+	private String team2;
 
+	public String getTeam2() {
+		return team2;
+	}
+	public void setTeam2(String team2) {
+		this.team2 = team2;
+	}
 	private String date;
 	public int getMid() {
 		return mid;
@@ -29,10 +36,10 @@ public class IPLSchedule {
 		this.venue = venue;
 	}
 	public String getTeam1() {
-		return teams;
+		return team1;
 	}
-	public void setTeam1(String teams) {
-		this.teams = teams;
+	public void setTeam1(String team1) {
+		this.team1 = team1;
 	}
 	
 	public String getDate() {
@@ -43,9 +50,10 @@ public class IPLSchedule {
 	}
 	@Override
 	public String toString() {
-		return "IPLSchedule [mid=" + mid + ", venue=" + venue + ", teams=" + teams + ",  date="
+		return "IPLSchedule [mid=" + mid + ", venue=" + venue + ", team1=" + team1 + ", team2=" + team2 + ", date="
 				+ date + "]";
 	}
+	
 	
 	
 	
