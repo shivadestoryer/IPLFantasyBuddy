@@ -1,10 +1,16 @@
 package com.example.demo.model;
 
 import java.sql.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 public class IPLSchedule {
@@ -15,6 +21,11 @@ public class IPLSchedule {
 	private  String venue;
 	private String team1;
 	private String team2;
+	
+	//@OneToMany(mappedBy="schedule")
+	 @OneToMany(mappedBy = "schedule", targetEntity = Comment.class, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+   @JsonIgnoreProperties("comment")
+	private List<Comment> comment;
 
 	public String getTeam2() {
 		return team2;

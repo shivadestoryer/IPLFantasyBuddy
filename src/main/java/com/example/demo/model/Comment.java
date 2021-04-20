@@ -21,8 +21,13 @@ public class Comment {
 	@ManyToOne
 	@JoinColumn(name="uid")
     @JsonIgnoreProperties("comment")
-	
 	private Users user;
+	
+	
+	@ManyToOne
+	@JoinColumn(name="mid")
+    @JsonIgnoreProperties("comment")
+	private IPLSchedule schedule;
 	
 	public int getCid() {
 		return cid;
@@ -41,6 +46,14 @@ public class Comment {
 	}
 	public void setUser(Users user) {
 		this.user = user;
+	}
+	
+	
+	public IPLSchedule getSchedule() {
+		return schedule;
+	}
+	public void setSchedule(IPLSchedule schedule) {
+		this.schedule = schedule;
 	}
 	@Override
 	public String toString() {
